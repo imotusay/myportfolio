@@ -1,218 +1,159 @@
-/* ==========================================
-   1. 基本設定 & 共通変数
-   ========================================== */
-:root {
-  --bg-dark: #0f172a;       /* メインのダーク背景色 */
-  --bg-card: rgba(30, 41, 59, 0.7); /* カードの半透明背景 */
-  --text-main: #f8fafc;     /* メインの白い文字色 */
-  --text-sub: #94a3b8;      /* 補足のグレー文字色 */
-  --accent-color: #3b82f6;  /* アクセント（青） */
-  --accent-hover: #1d4ed8;  /* アクセント（ホバー時） */
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* 全体のスタイル設定 */
 body {
-  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
-  background-color: var(--bg-dark);
-  color: var(--text-main);
-  line-height: 1.6;
-  overflow-x: hidden;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f8f9fa;
+    line-height: 1.6;
 }
 
-/* ==========================================
-   2. ヒーローセクション（動くグラデーション）
-   ========================================== */
+/* ヘッダー（ナビゲーション） */
 header {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  
-  /* 4色のグラデーションを設定し、大きく広げてアニメーションさせる */
-  background: linear-gradient(-45deg, #0f172a, #1e1b4b, #1d4ed8, #0369a1);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #212529;
+}
+nav a {
+    text-decoration: none;
+    color: #495057;
+    margin-left: 20px;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #007bff;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-  font-weight: 700;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-header p {
-  font-size: 1.2rem;
-  color: #cbd5e1;
-  max-width: 600px;
-  margin-bottom: 30px;
-}
-
-/* ==========================================
-   3. レイアウト & セクション共通
-   ========================================== */
-main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-section {
-  padding: 80px 0;
-}
-
-section h2 {
-  font-size: 2.2rem;
-  text-align: center;
-  margin-bottom: 50px;
-  position: relative;
-  font-weight: 600;
-}
-
-/* タイトルの下に引くリッチなアンダーライン */
-section h2::after {
-  content: '';
-  position: absolute;
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 4px;
-  background-color: var(--accent-color);
-  border-radius: 2px;
-}
-
-/* ==========================================
-   4. プロフィール & スキルセクション
-   ========================================== */
-/* 斜めカットの区切り（視覚的なアクセント） */
-.profile-section {
-  position: relative;
-  background: #131b2e;
-}
-
-.profile-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.profile-img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--accent-color);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-}
-
-.profile-text {
-  max-width: 500px;
-}
-
-/* ==========================================
-   5. 制作実績（Works カードのグラスモーフィズム）
-   ========================================== */
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.works-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
-}
-
-/* ホバーで滑らかに浮き上がる効果 */
-.works-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 1px rgba(255, 255, 255, 0.2) inset;
-}
-
-.works-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-  color: var(--text-main);
-}
-
-.works-card p {
-  font-size: 0.95rem;
-  color: var(--text-sub);
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-/* ==========================================
-   6. ボタン（背景がスライドする演出）
-   ========================================== */
-.btn-primary {
-  position: relative;
-  display: inline-block;
-  align-self: flex-start;
-  padding: 10px 24px;
-  color: var(--text-main);
-  font-weight: 500;
-  border: 2px solid var(--accent-color);
-  border-radius: 8px;
-  text-decoration: none;
-  background-image: linear-gradient(to right, var(--accent-color) 50%, transparent 50%);
-  background-position: 100% 0;
-  background-size: 200% 100%;
-  transition: background-position 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.4s ease;
-  z-index: 1;
-}
-
-/* ホバーした時に背景色が左から滑り込んでくる */
-.btn-primary:hover {
-  background-position: 0 0;
-  color: #ffffff;
-}
-
-/* ==========================================
-   7. レスポンシブ対応（スマホ表示の調整）
-   ========================================== */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2.2rem;
-  }
-  
-  header p {
-    font-size: 1rem;
-  }
-  
-  section h2 {
-    font-size: 1.8rem;
-  }
-  
-  .profile-container {
-    flex-direction: column;
+/* メインビジュアル */
+.hero {
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    padding: 80px 20px;
     text-align: center;
-  }
+}
+.hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+    color: #212529;
+}
+.hero p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #495057;
+}
+
+/* コンテンツの共通枠 */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+section h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #007bff;
+    margin: 10px auto 0 auto;
+}
+
+/* プロフィール */
+.about-text {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.profile-table {
+    max-width: 500px;
+    margin: 40px auto 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.profile-table th, .profile-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.profile-table th {
+    background-color: #f1f3f5;
+    color: #495057;
+    width: 30%;
+    font-weight: bold;
+}
+.profile-table tr:last-child th, .profile-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* スキル */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.skill-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+/* 作品集 */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.work-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.work-img {
+    width: 100%;
+    height: 180px;
+    background-color: #dee2e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+}
+.work-info {
+    padding: 20px;
+}
+.work-info h3 {
+    margin: 0 0 10px 0;
+}
+
+/* フッター */
+footer {
+    background-color: #212529;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
 }
