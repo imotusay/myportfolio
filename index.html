@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* 全体のスタイル設定 */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        /* ヘッダー（ナビゲーション） */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #212529;
+        }
+        nav a {
+            text-decoration: none;
+            color: #495057;
+            margin-left: 20px;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #007bff;
+        }
+
+        /* メインビジュアル */
+        .hero {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+            color: #212529;
+        }
+        .hero p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #495057;
+        }
+
+        /* コンテンツの共通枠 */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: #007bff;
+            margin: 10px auto 0 auto;
+        }
+
+        /* プロフィール */
+        .about-text {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* スキル */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .skill-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        /* 作品集 */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .work-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .work-img {
+            width: 100%;
+            height: 180px;
+            background-color: #dee2e6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+        }
+        .work-info {
+            padding: 20px;
+        }
+        .work-info h3 {
+            margin: 0 0 10px 0;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #212529;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">My Portfolio</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#works">Works</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインビジュアル -->
+    <div class="hero">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Webデザイナー / エンジニアを目指しています</p>
+    </div>
+
+    <!-- 自己紹介 -->
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <div class="about-text">
+            <p>はじめまして！ご覧いただきありがとうございます。</p>
+            <p>ここにあなたの経歴、趣味、Web制作を始めたきっかけや意気込みなどを自由に書いてください。親しみやすい文章を心がけると効果的です。</p>
+        </div>
+    </section>
+
+    <!-- スキル -->
+    <section id="skills" class="container" style="background-color: #fff; max-width: 100%;">
+        <div style="max-width: 960px; margin: 0 auto; padding: 0 20px;">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>HTML / CSS</h3>
+                    <p>標準的なコーディング、レスポンシブ対応が可能です。</p>
+                </div>
+                <div class="skill-card">
+                    <h3>JavaScript</h3>
+                    <p>サイトに動きをつける基本的なスクリプトを書けます。</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Design</h3>
+                    <p>Figmaを使ってWebサイトのワイヤーフレームを作れます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集 -->
+    <section id="works" class="container">
+        <h2>Works</h2>
+        <div class="works-grid">
+            <!-- 作品1 -->
+            <div class="work-card">
+                <div class="work-img">イメージ画像 [No Image]</div>
+                <div class="work-info">
+                    <h3>架空のカフェサイト</h3>
+                    <p>デザインからコーディングまで一人で担当した初めてのWebサイトです。</p>
+                </div>
+            </div>
+            <!-- 作品2 -->
+            <div class="work-card">
+                <div class="work-img">イメージ画像 [No Image]</div>
+                <div class="work-info">
+                    <h3>タスク管理アプリ</h3>
+                    <p>JavaScriptを使って、タスクの追加・削除ができる簡単なアプリを作りました。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2026 Your Name. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
