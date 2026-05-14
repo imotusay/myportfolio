@@ -3,151 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        /* 全体のスタイル設定 */
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f8f9fa;
-            line-height: 1.6;
-        }
-
-        /* ヘッダー（ナビゲーション） */
-        header {
-            background-color: #ffffff;
-            border-bottom: 1px solid #e9ecef;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container {
-            max-width: 960px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
-        .logo {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #212529;
-        }
-        nav a {
-            text-decoration: none;
-            color: #495057;
-            margin-left: 20px;
-            transition: color 0.2s;
-        }
-        nav a:hover {
-            color: #007bff;
-        }
-
-        /* メインビジュアル */
-        .hero {
-            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
-            padding: 80px 20px;
-            text-align: center;
-        }
-        .hero h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.5rem;
-            color: #212529;
-        }
-        .hero p {
-            margin: 0;
-            font-size: 1.1rem;
-            color: #495057;
-        }
-
-        /* コンテンツの共通枠 */
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-        section h2::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 3px;
-            background-color: #007bff;
-            margin: 10px auto 0 auto;
-        }
-
-        /* プロフィール */
-        .about-text {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* スキル */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-        .skill-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        /* 作品集 */
-        .works-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .work-card {
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .work-img {
-            width: 100%;
-            height: 180px;
-            background-color: #dee2e6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6c757d;
-        }
-        .work-info {
-            padding: 20px;
-        }
-        .work-info h3 {
-            margin: 0 0 10px 0;
-        }
-
-        /* フッター */
-        footer {
-            background-color: #212529;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-    </style>
+    <title>安冨 秀和 - ポートフォリオ</title>
+    
+    <!-- 💡 faviconの読み込み設定 -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- 💡 外部スタイルシートの読み込み設定 -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- ヘッダー -->
     <header>
         <div class="nav-container">
-            <div class="logo">My Portfolio</div>
+            <div class="logo">Hidekazu Yasutomi</div>
             <nav>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
@@ -159,16 +28,32 @@
     <!-- メインビジュアル -->
     <div class="hero">
         <h1>Welcome to My Portfolio</h1>
-        <p>Webデザイナー / エンジニアを目指しています</p>
+        <p>建設業界の現場管理からIT業界へ転身｜モダンな技術でビジネスを加速させるWeb系エンジニア</p>
     </div>
 
     <!-- 自己紹介 -->
     <section id="about" class="container">
         <h2>About Me</h2>
         <div class="about-text">
-            <p>はじめまして！ご覧いただきありがとうございます。</p>
-            <p>ここにあなたの経歴、趣味、Web制作を始めたきっかけや意気込みなどを自由に書いてください。親しみやすい文章を心がけると効果的です。</p>
+            <p>建設業界で培った徹底した工程管理と泥臭い問題解決力を武器に、IT業界へ転身しました。</p>
+            <p>現在はWeb系エンジニアとして、モダンな開発環境のもと、スピード感を持ったコーポレートサイト制作やWebアプリケーション開発に携わっています。</p>
+            <p>「バグのない堅牢なコード」と「期日遵守」を信条に、フロントエンドからバックエンドまで、お客様の課題を技術で解決する最適なソリューションをご提案します。</p>
         </div>
+
+        <table class="profile-table">
+            <tr>
+                <th>氏名</th>
+                <td>安冨 秀和（やすとみ ひでかず）</td>
+            </tr>
+            <tr>
+                <th>生年月日</th>
+                <td>1968年6月9日</td>
+            </tr>
+            <tr>
+                <th>居住地</th>
+                <td>埼玉県富士見市</td>
+            </tr>
+        </table>
     </section>
 
     <!-- スキル -->
@@ -177,16 +62,16 @@
             <h2>Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>HTML / CSS</h3>
-                    <p>標準的なコーディング、レスポンシブ対応が可能です。</p>
+                    <h3>Frontend</h3>
+                    <p>HTML/CSS, JavaScriptを用いた、モダンでレスポンシブなサイト・UI開発を得意としています。</p>
                 </div>
                 <div class="skill-card">
-                    <h3>JavaScript</h3>
-                    <p>サイトに動きをつける基本的なスクリプトを書けます。</p>
+                    <h3>Backend & Apps</h3>
+                    <p>業務効率化アプリやWebシステムの構築など、バックエンドを含めた一気通貫の開発が可能です。</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Design</h3>
-                    <p>Figmaを使ってWebサイトのワイヤーフレームを作れます。</p>
+                    <h3>Video Editing</h3>
+                    <p>AIを活用した動画編集ソフト「Vrew」を熟知。迅速なテロップ生成やカット編集で、訴求力の高い動画をスピーディーに制作します。</p>
                 </div>
             </div>
         </div>
@@ -198,26 +83,54 @@
         <div class="works-grid">
             <!-- 作品1 -->
             <div class="work-card">
-                <div class="work-img">イメージ画像 [No Image]</div>
+                <div class="work-img">
+                    <a href="https://lovotcafe.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #6c757d; display: block; width: 100%; height: 100%; line-height: 180px; text-align: center;">
+                        LOVOTカフェ 公式サイト
+                    </a>
+                </div>
                 <div class="work-info">
-                    <h3>架空のカフェサイト</h3>
-                    <p>デザインからコーディングまで一人で担当した初めてのWebサイトです。</p>
+                    <h3>LOVOTカフェ【公式サイト】</h3>
+                    <p><strong>担当範囲：</strong>ドメイン取得、サーバー選定・構築、フロントエンド、バックエンド</p>
+                    <p><strong>概要：</strong>癒やしロボット「LOVOT」と触れ合えるカフェの公式Webサイト。予約導線やメニュー・グッズ紹介へのアクセス性を重視し、モダンな環境でレスポンシブ対応まで一貫して構築しました。</p>
+                    <p style="margin-top: 15px;">
+                        <a href="https://lovotcafe.com/" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: none; font-weight: bold;">👉 サイトを見る</a>
+                    </p>
                 </div>
             </div>
             <!-- 作品2 -->
             <div class="work-card">
-                <div class="work-img">イメージ画像 [No Image]</div>
+                <div class="work-img" style="font-weight: bold; background-color: #e9ecef;">
+                    カラオケ機器リサイクル管理システム
+                </div>
                 <div class="work-info">
-                    <h3>タスク管理アプリ</h3>
-                    <p>JavaScriptを使って、タスクの追加・削除ができる簡単なアプリを作りました。</p>
+                    <h3>カラオケ機器回収・修理管理システム</h3>
+                    <p><strong>担当範囲：</strong>要件定義、DB設計、バックエンド、フロントエンド</p>
+                    <p><strong>概要：</strong>カラオケ事業撤退企業から回収したマイクやリモコン等の機器を、部品単位に分解して「修理再生用」と「素材リサイクル用」に仕分け・追跡する社内業務システムです。</p>
+                    <p><strong>成果：</strong>手作業だった在庫・進捗管理をデジタル化。機材の再利用率向上と、工程ごとのトレーサビリティ確保による作業効率化を実現しました。</p>
                 </div>
             </div>
-        </div>
+            <!-- 作品3 -->
+            <div class="work-card">
+                <div class="work-img">
+                    <a href="https://miraino.sakura.ne.jp/nouen/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #6c757d; display: block; width: 100%; height: 100%; line-height: 180px; text-align: center;">
+                        みらい絆農園 管理システム
+                    </a>
+                </div>
+                <div class="work-info">
+                    <h3>菌床栽培 収穫量管理システム「みらい絆農園」</h3>
+                    <p><strong>担当範囲：</strong>要件定義、DB設計、バックエンド、フロントエンド構築、サーバー運用</p>
+                    <p><strong>概要：</strong>菌床栽培で収穫された農産物の収穫量をリアルタイムで管理・集計するWebシステムです。日別・月別・棚別・人別の高度な集計機能や、菌床棚配置図、収穫カレンダー等の機能を実装しました。</p>
+                    <p><strong>成果：</strong>アナログなデータ管理をデジタル化し、多角的な集計データをもとにした栽培計画の最適化と、農作業現場のDX（デジタルトランスフォーメーション）を実現しました。</p>
+                    <p style="margin-top: 15px;">
+                        <a href="https://miraino.sakura.ne.jp/nouen/" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: none; font-weight: bold;">👉 サイトを見る</a>
+                    </p>
+                </div>
+            </div>
     </section>
 
     <!-- フッター -->
     <footer>
-        <p>&copy; 2026 Your Name. All Rights Reserved.</p>
+        <p>&copy; 2026 Hidekazu Yasutomi. All Rights Reserved.</p>
     </footer>
 
 </body>
